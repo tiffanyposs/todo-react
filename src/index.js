@@ -26,9 +26,24 @@ class App extends Component {
         <TodoInput
           onTodoSubmit={ (todo) => { this.updateTodos(todo); }}/>
         <TodoList
-          todos={ this.state.todos }/>
+          todos={ this.state.todos }
+          removeTodo={ selectedTodo => this.removeTodo(selectedTodo) }/>
       </div>
     );
+  }
+
+  /**
+  Removes a todo
+  * @name removeTodo
+  * @param selectedTodo
+  */
+  removeTodo(selectedTodo) {
+    let todos = this.state.todos;
+    let index = todos.indexOf(selectedTodo);
+    if(index > -1) {
+      todos.splice(index, 1);
+      this.setState({ todos });
+    }
   }
 
   /**

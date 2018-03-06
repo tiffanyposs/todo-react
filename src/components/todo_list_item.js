@@ -7,7 +7,10 @@ class TodoListItem extends Component {
   */
   render() {
     return (
-      <li>{this.props.todo}</li>
+      <li>
+        <span>{this.props.todo}</span>
+        <span onClick={ () => this.props.removeTodo(this.props.todo)}>Delete</span>
+      </li>
     )
   }
 }

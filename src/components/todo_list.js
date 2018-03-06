@@ -29,7 +29,8 @@ class TodoList extends Component {
       return (
         <TodoListItem
           key={index}
-          todo={todo} />
+          todo={todo}
+          removeTodo={this.props.removeTodo} />
       );
     });
   }
